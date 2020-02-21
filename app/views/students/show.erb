@@ -1,0 +1,12 @@
+<label><h4>Student name </h4></label>
+<%=@student.name%>
+
+
+
+
+
+<form method="POST" action="/students/<%=@student.id%>">
+    <input type="hidden" name="_method" value="DELETE"/>
+    
+    <input type="submit"/ value="delete student">
+</form>
