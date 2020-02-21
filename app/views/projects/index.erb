@@ -1,0 +1,20 @@
+<h3> RUNTIME TERROR </h3>
+
+<label> All Projects </label>
+<ul>
+  <% @projects.each do |project| %>
+    <a href="/projects/<%= project.id %>">
+      <li><%= project.name  %></li> 
+    </a>
+  <% end %>
+</ul>
+
+<br>
+<button>
+  <a href="/projects/new">Create New Project
+</button>
+<br>
+<button>
+  <a href="/">Go Home
+</button>
+

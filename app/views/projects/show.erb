@@ -1,0 +1,28 @@
+<h3> RUNTIME TERROR </h3>
+
+<label>Project Info:</label>
+<br>
+<br>
+<%= @project.name %>
+<br>
+<br>
+<button>
+  <a href="/projects/<%= @project.id %>/edit">Edit Project</a>
+</button>
+<br>
+<button>
+  <a href="/projects">See Projects</a>
+</button>
+<br>
+<button>
+  <a href="/">Go Home</a>
+</button>
+
+<br>
+<br>
+
+
+<form action="/projects/<%= @project.id %>/delete" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Project">
+  </form>
