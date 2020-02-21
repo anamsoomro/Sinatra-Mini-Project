@@ -1,11 +1,23 @@
 <h3> RUNTIME TERROR </h3>
 
-<label>Edit Student:</label><br>
+<label>Edit Project:</label><br>
 <br>
 <form action="/projects/<%= @project.id %>" method="post">
   <input type="hidden" name="_method" value="patch">
   <label>Name:</label>
-  <input type="text" name="project[name]" value=<%= @project.name %>><br>
+  <input type="text" name="project[name]" value="<%= @project.name %>"><br>
+  <br>
+
+  <label> Assigned Student(s): </label><br>
+  <% @students.each do |student|%>
+    <% if @assigned_students.include? (student)%>
+      <input type="checkbox" name=student[student_id][] value="<%= student.id %>" checked>
+      <label><%= student.name %></label><br>
+    <% else %>
+      <input type="checkbox" name=student[student_id][] value="<%= student.id %>">
+      <label><%= student.name %></label><br>
+    <% end %>
+  <% end %>
   <br>
   <input type="submit">
 </form>

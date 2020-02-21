@@ -6,6 +6,14 @@
 <%= @project.name %>
 <br>
 <br>
+<label> Students </label>
+  <ul>
+    <% @students.each do |student|%>
+       <a href="/students/<%=student.id%>">
+       <li> <%=student.name%></li>
+       </a>
+    <%end%>
+    </ul>
 <button>
   <a href="/projects/<%= @project.id %>/edit">Edit Project</a>
 </button>

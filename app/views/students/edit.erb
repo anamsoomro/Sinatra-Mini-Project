@@ -1,5 +1,14 @@
+<h3> RUNTIME TERROR </h3>
+
+
+<label>Edit Student:</label><br>
+
+
+<br>
 <form method="POST" action="/students/<%=@student.id%>">
     <input type="hidden" name="_method"  value="PATCH">
-    <input type="text" name="name" value="<%=@student.name%>">
+    <label> Name: </label>
+    <input type="text" name="name" value="<%=@student.name%>"><br>
+    <br>
     <input type="submit" value="edit student">
 </form>

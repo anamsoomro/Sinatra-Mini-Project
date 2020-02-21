@@ -1,10 +1,16 @@
 <h3> RUNTIME TERROR </h3>
 
-<label>New Student:</label><br>
+<label>New Project:</label><br>
 <br>
 <form action="/projects" method="post">
   <label>Name:</label>
   <input type="text" name="project[name]"><br>
   <br>
-  <input type="submit">
+<label>Select Student(s):</label><br>
+<% @students.each do |student| %>
+  <input type="checkbox" name="student[student_id][]" value="<%= student.id %>">
+  <label><%= student.name %></label><br>
+<% end %>
+<br>
+ <input type="submit">
 </form>

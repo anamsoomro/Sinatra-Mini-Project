@@ -13,6 +13,7 @@ class StudentsController < ApplicationController
   #shows the form of a student
   get '/students/:id' do 
     @student = current_student
+    @projects = @student.projects 
     erb :show 
   end
   #creates a new student

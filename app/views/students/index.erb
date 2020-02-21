@@ -1,5 +1,19 @@
+<h3> RUNTIME TERROR </h3>
+
+
 <label><h4>Students</h4></label>
 
 <%@students.each do |student|%>
-<li><%=student.name%></li>
+  <a href="/students/<%= student.id %>">
+    <li><%=student.name%></li>
+  </a>
 <%end%>
+
+<br>
+<button>
+  <a href="/students/new">Create New Student</a>
+</button>
+<br>
+<button>
+  <a href="/">Go Home</a>
+</button>

@@ -1,12 +1,37 @@
-<label><h4>Student name </h4></label>
-<%=@student.name%>
+<h3> RUNTIME TERROR </h3>
+<label>Student name</label><br>
+<br>
+<%=@student.name%><br>
+<br>
+<label>Projects: </label><br>
+<ul>
+  <% @projects.each do |project|%>
+  <a href="/projects/<%=project.id%>">
+    <li><%= project.name %><br></li>
+    </a>
+  <% end %>
+</ul>
+<br>
 
-
-
-
-
+<button>
+  <a href="/students/<%= @student.id %>/edit">Edit Student</a>
+</button>
+<br>
+<button>
+  <a href="/projects/new">Assign Project</a>
+</button>
+<br>
+<button>
+  <a href="/students">See Students</a>
+</button>
+<br>
+<button>
+  <a href="/">Go Home</a>
+</button>
+<br>
+<br>
 <form method="POST" action="/students/<%=@student.id%>">
     <input type="hidden" name="_method" value="DELETE"/>
     
-    <input type="submit"/ value="delete student">
+    <input type="submit" value="delete student">
 </form>
